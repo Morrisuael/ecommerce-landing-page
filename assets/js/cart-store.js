@@ -89,7 +89,7 @@
   function formatCurrency(amount) {
     return new Intl.NumberFormat("en-US", {
       style: "currency",
-      currency: "uSD",
+      currency: "USD",
       maximumFractionDigits: 0,
     }).format(amount);
   }
