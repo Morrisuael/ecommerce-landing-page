@@ -1,0 +1,42 @@
+<!doctype html>
+<!-- Shared product detail route; the id query parameter selects a catalog item. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Detailed product information and specifications at KagalariMart.">
+  <title>Product Details | KagalariMart</title>
+  <script src="assets/js/theme-toggle.js"></script>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/catalog-pages.css">
+  <script src="assets/js/cart-store.js" defer></script>
+  <script src="assets/js/catalog-data.js" defer></script>
+  <script src="assets/js/catalog-pages.js" defer></script>
+</head>
+<body class="catalog-page" data-product-detail-page>
+  <header class="catalog-header"><div class="page-width catalog-header__inner"><a class="wordmark" href="index.html">Kagalar<span>iMart</span></a><div class="catalog-header__actions"><button class="theme-toggle icon-button" type="button" data-theme-toggle aria-pressed="false" aria-label="Switch to dark mode" title="Switch to dark mode"><span data-theme-icon aria-hidden="true">☾</span></button><a class="catalog-cart" href="checkout-page.html">Cart <span class="catalog-cart-count" aria-live="polite">0</span></a></div></div></header>
+  <main class="page-width catalog-main">
+    <nav class="catalog-breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">Product details</span></nav>
+    <h1 class="product-detail-title">Product details</h1>
+    <p class="product-detail-not-found" hidden>This product could not be found in the catalogue. <a href="index.html">Return to KagalariMart</a>.</p>
+    <article class="product-detail" hidden>
+      <div class="product-detail__visual">
+        <img class="product-detail-image" alt="" hidden>
+        <div class="product-detail-image-placeholder" hidden>Product image coming soon</div>
+      </div>
+      <div class="product-detail__content">
+        <p class="product-detail-brand"></p>
+        <p class="product-detail-description"></p>
+        <h2>Product details</h2>
+        <ul class="product-detail-specs"></ul>
+        <p class="product-detail-price"></p>
+        <a class="product-detail-source" target="_blank" rel="noopener noreferrer" hidden>Manufacturer or reference source</a>
+        <button class="catalog-button catalog-button--primary" type="button" data-detail-add hidden>Add to cart</button>
+        <p class="catalog-feedback" role="status" aria-live="polite" hidden></p>
+      </div>
+    </article>
+  </main>
+  <footer class="catalog-footer"><div class="page-width">KagalariMart</div></footer>
+  <script src="assets/js/page-controls.js"></script>
+</body>
+</html>

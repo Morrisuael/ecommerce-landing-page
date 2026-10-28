@@ -1,0 +1,161 @@
+.service-main {
+  padding-top: 24px;
+  padding-bottom: 48px;
+}
+
+.service-intro {
+  max-width: 760px;
+  margin: 8px 0 24px;
+}
+
+.service-eyebrow {
+  margin: 0 0 5px;
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.service-intro h1 {
+  margin: 0 0 10px;
+  font-size: clamp(30px, 5vw, 42px);
+}
+
+.service-intro > p:not(.service-eyebrow) {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.service-contact {
+  display: grid;
+  gap: 5px;
+  margin-top: 18px;
+  padding: 15px 17px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: var(--soft);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.service-contact a,
+.checkout-footer a {
+  color: var(--blue);
+  font-weight: 600;
+}
+
+.service-nav {
+  position: sticky;
+  z-index: 3;
+  top: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 20px;
+  padding: 12px 0;
+  background: #fff;
+}
+
+.service-nav a {
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  color: var(--ink);
+  background: #fff;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.service-nav a:hover,
+.service-nav a:focus-visible {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+.service-sections {
+  display: grid;
+  gap: 16px;
+  max-width: 900px;
+}
+
+.service-card {
+  scroll-margin-top: 80px;
+  padding: clamp(18px, 4vw, 26px);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  line-height: 1.65;
+}
+
+.service-card h2 {
+  margin: 0 0 12px;
+  font-size: 20px;
+}
+
+.service-card p,
+.service-card ul {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.service-card p:last-child,
+.service-card ul:last-child {
+  margin-bottom: 0;
+}
+
+.service-card ul {
+  padding-left: 20px;
+}
+
+.service-card li + li {
+  margin-top: 6px;
+}
+
+.service-card details {
+  padding: 13px 0;
+  border-top: 1px solid var(--line);
+}
+
+.service-card details:first-of-type {
+  border-top: 0;
+}
+
+.service-card details:last-child {
+  padding-bottom: 0;
+}
+
+.service-card summary {
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.service-card details p {
+  margin: 9px 0 0;
+}
+
+html[data-theme="dark"] .service-contact,
+html[data-theme="dark"] .service-nav a,
+html[data-theme="dark"] .service-card {
+  background: #1b2831;
+}
+
+html[data-theme="dark"] .service-nav {
+  background: #11191f;
+}
+
+html[data-theme="dark"] .service-contact,
+html[data-theme="dark"] .service-card,
+html[data-theme="dark"] .service-card details {
+  border-color: var(--line);
+}
+
+@media (max-width: 620px) {
+  .service-main {
+    padding-top: 16px;
+  }
+
+  .service-nav {
+    top: 0;
+  }
+}

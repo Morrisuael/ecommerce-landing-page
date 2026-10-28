@@ -1,11 +1,13 @@
 <!doctype html>
+<!-- KagalariMart shopping cart and checkout page. -->
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#ffffff">
-    <meta name="description" content="Review your MegaMart cart and enter delivery details.">
-    <title>Cart &amp; Checkout | MegaMart</title>
+    <meta name="description" content="Review your KagalariMart cart and enter delivery details.">
+    <title>Cart &amp; Checkout | KagalariMart</title>
+    <script src="assets/js/theme-toggle.js"></script>
     <link rel="stylesheet" href="assets/css/styles.css">
     <script src="assets/js/cart-store.js" defer></script>
     <script src="assets/js/checkout.js" defer></script>
@@ -13,11 +15,14 @@
   <body class="checkout-page">
     <header class="checkout-header">
       <div class="page-width checkout-header__inner">
-        <a class="wordmark" href="index.html" aria-label="MegaMart home">Mega<span>Mart</span></a>
+        <a class="wordmark" href="index.html" aria-label="KagalariMart home">Kagalar<span>iMart</span></a>
+        <div class="checkout-header__actions">
+        <button class="theme-toggle icon-button" type="button" data-theme-toggle aria-pressed="false" aria-label="Switch to dark mode" title="Switch to dark mode"><span data-theme-icon aria-hidden="true">☾</span></button>
         <a class="checkout-header__cart" href="checkout-page.html" aria-current="page">
           <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M2 3h2l2.5 12.5a2 2 0 0 0 2 1.5h9.8a2 2 0 0 0 1.9-1.5L22 8H5"/><circle cx="9" cy="21" r="1"/><circle cx="18" cy="21" r="1"/></svg>
           Cart <span class="checkout-cart-count" aria-live="polite">0</span>
         </a>
+        </div>
       </div>
     </header>
 
@@ -27,6 +32,7 @@
       </nav>
       <h1 class="checkout-title">Cart &amp; Checkout</h1>
 
+      <!-- Cart contents and totals are rendered from local storage by checkout.js. -->
       <div class="checkout-layout">
         <section class="checkout-panel cart-panel" aria-labelledby="cart-heading">
           <div class="checkout-panel__heading">
@@ -56,14 +62,14 @@
           <div class="summary-total">
             <strong>Total before delivery</strong><strong class="summary-total__amount">$0</strong>
           </div>
-          <p class="delivery-note">Delivery charges and final pricing cannot be confirmed in this front-end demo.</p>
           <a class="button button--primary checkout-link" href="#customer-details">Continue to checkout</a>
         </aside>
       </div>
 
+      <!-- Browser validation is active for required delivery details. -->
       <section class="checkout-panel customer-panel" id="customer-details" aria-labelledby="customer-heading">
         <h2 id="customer-heading">Delivery details</h2>
-        <p class="form-intro">Enter the details needed to arrange delivery. Your information is not saved by this demo.</p>
+        <p class="form-intro">Provide your contact and delivery details so your order can be prepared.</p>
         <form class="checkout-form">
           <div class="form-grid">
             <div class="form-field">
@@ -84,31 +90,42 @@
               <input id="address" name="address" type="text" autocomplete="street-address" required minlength="5" maxlength="200">
             </div>
             <div class="form-field">
-              <label for="city">City / town <span aria-hidden="true">*</span></label>
-              <input id="city" name="city" type="text" autocomplete="address-level2" required maxlength="100">
+              <label for="country">Country <span aria-hidden="true">*</span></label>
+              <select id="country" name="country" autocomplete="country-name" required>
+                <option value="">Select a country</option>
+              </select>
             </div>
             <div class="form-field">
-              <label for="region">State / region <span aria-hidden="true">*</span></label>
-              <input id="region" name="region" type="text" autocomplete="address-level1" required maxlength="100">
+              <label for="region">State / province / region <span aria-hidden="true">*</span></label>
+              <select id="region" name="region" autocomplete="address-level1" required disabled>
+                <option value="">Select a country first</option>
+              </select>
+              <input id="region-manual" name="region" type="text" autocomplete="address-level1" maxlength="100" placeholder="Enter your state or region" hidden disabled>
             </div>
+            <div class="form-field">
+              <label for="city">City / town <span aria-hidden="true">*</span></label>
+              <select id="city" name="city" autocomplete="address-level2" required disabled>
+                <option value="">Select a state or region first</option>
+              </select>
+              <input id="city-manual" name="city" type="text" autocomplete="address-level2" maxlength="100" placeholder="Enter your city or town" hidden disabled>
+            </div>
+            <p class="location-status form-field--wide" data-location-status role="status" aria-live="polite">Choose a country to load available states and cities. If a location is not listed, you can enter it manually.</p>
+            <small class="location-privacy form-field--wide">Location suggestions are provided by CountriesNow. Only selected country and state names are sent to load choices; your personal details are not.</small>
             <div class="form-field form-field--wide">
               <label for="instructions">Delivery instructions <span class="optional-label">(optional)</span></label>
               <textarea id="instructions" name="instructions" rows="3" maxlength="500"></textarea>
             </div>
           </div>
-          <div class="payment-note">
-            <strong>Payment</strong>
-            <p>No payment method is connected. This demo does not collect money or card details.</p>
-          </div>
           <p class="checkout-feedback" role="status" aria-live="polite" hidden></p>
-          <button class="button button--primary place-order" type="submit">Place demo order</button>
-          <p class="demo-disclaimer">Demo only: this page cannot submit or confirm a real order. Your cart will remain saved.</p>
+          <button class="button button--primary place-order" type="submit">Submit order</button>
+          <p class="checkout-notice">Order submission is currently unavailable. Your cart remains saved in this browser.</p>
         </form>
       </section>
     </main>
 
     <footer class="checkout-footer">
-      <div class="page-width">MegaMart · Front-end checkout demonstration</div>
+      <div class="page-width">KagalariMart · Customer checkout</div>
     </footer>
+    <script src="assets/js/page-controls.js"></script>
   </body>
 </html>

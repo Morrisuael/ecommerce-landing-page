@@ -1,0 +1,30 @@
+<!doctype html>
+<!-- Brand-focused catalog listing populated from the shared product data. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore smartphones and electronics from leading brands at KagalariMart.">
+  <title>Electronics Brands | KagalariMart</title>
+  <script src="assets/js/theme-toggle.js"></script>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/catalog-pages.css">
+  <script src="assets/js/cart-store.js" defer></script>
+  <script src="assets/js/catalog-data.js" defer></script>
+  <script src="assets/js/catalog-pages.js" defer></script>
+</head>
+<body class="catalog-page" data-catalog-section="brands">
+  <header class="catalog-header"><div class="page-width catalog-header__inner"><a class="wordmark" href="index.html">Kagalar<span>iMart</span></a><div class="catalog-header__actions"><button class="theme-toggle icon-button" type="button" data-theme-toggle aria-pressed="false" aria-label="Switch to dark mode" title="Switch to dark mode"><span data-theme-icon aria-hidden="true">☾</span></button><a class="catalog-cart" href="checkout-page.html">Cart <span class="catalog-cart-count" aria-live="polite">0</span></a></div></div></header>
+  <main class="page-width catalog-main">
+    <nav class="catalog-breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">Electronics brands</span></nav>
+    <h1 class="catalog-page-title">Electronics Brands</h1>
+    <p class="catalog-page-intro"></p>
+    <p class="catalog-feedback" role="status" aria-live="polite" hidden></p>
+    <!-- catalog-pages.js renders catalog sections into this grid. -->
+    <div class="catalog-grid"></div>
+  </main>
+  <footer class="catalog-footer"><div class="page-width">KagalariMart</div></footer>
+  <dialog class="product-dialog" aria-labelledby="product-dialog-title"><button class="product-dialog__close" type="button" aria-label="Close product details">×</button><div class="product-dialog__image"></div><div class="product-dialog__content"><p class="product-dialog__brand"></p><h2 class="product-dialog__title" id="product-dialog-title"></h2><p class="product-dialog__description"></p><ul class="product-dialog__specs"></ul><p class="product-dialog__price"></p><a class="product-dialog__source" target="_blank" rel="noopener noreferrer">Manufacturer or reference source</a><button class="catalog-button catalog-button--primary" type="button" data-dialog-add>Add to cart</button></div></dialog>
+  <script src="assets/js/page-controls.js"></script>
+</body>
+</html>

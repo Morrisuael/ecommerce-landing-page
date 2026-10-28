@@ -1,4 +1,5 @@
 <!doctype html>
+<!-- Main storefront: home-page sections and shared dialogs are populated from the catalog scripts. -->
 <html lang="en">
 
 <head>
@@ -6,11 +7,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#ffffff">
   <meta name="description"
-    content="Discover great deals on electronics, home essentials, groceries and more at MegaMart.">
-  <title>MegaMart | Great deals every day</title>
+    content="Discover great deals on electronics, home essentials, groceries and more at KagalariMart.">
+  <title>KagalariMart | Great deals every day</title>
+  <script src="assets/js/theme-toggle.js"></script>
   <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/catalog-pages.css">
   <script src="assets/js/cart-store.js" defer></script>
+  <script src="assets/js/catalog-data.js" defer></script>
   <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/catalog-pages.js" defer></script>
 </head>
 
 <body>
@@ -85,7 +90,7 @@
   </svg>
   <div class="announcement">
     <div class="page-width announcement__inner">
-      <span>Welcome to worldwide Megamart!</span>
+      <span>Welcome to KagalariMart!</span>
       <div class="announcement__links">
         <a href="#delivery"><svg class="icon utility-icon" aria-hidden="true">
             <use href="#icon-location" />
@@ -100,6 +105,7 @@
     </div>
   </div>
 
+  <!-- Store navigation, search, account, and cart controls. -->
   <header class="site-header">
     <div class="page-width header-main">
       <button class="menu-toggle icon-button" type="button" aria-label="Toggle category navigation"
@@ -108,7 +114,7 @@
           <use href="#icon-menu" />
         </svg>
       </button>
-      <a class="wordmark" href="#" aria-label="MegaMart home">Mega<span>Mart</span></a>
+      <a class="wordmark" href="#" aria-label="KagalariMart home">Kagalar<span>iMart</span></a>
 
       <form class="search" role="search">
         <label class="sr-only" for="site-search">Search products</label>
@@ -122,6 +128,9 @@
       </form>
 
       <nav class="account-nav" aria-label="Account and cart">
+        <button class="theme-toggle icon-button" type="button" data-theme-toggle aria-pressed="false" aria-label="Switch to dark mode" title="Switch to dark mode">
+          <span data-theme-icon aria-hidden="true">☾</span>
+        </button>
         <a href="#account"><svg class="icon nav-icon" aria-hidden="true">
             <use href="#icon-user" />
           </svg><span>Sign Up/Sign In</span></a>
@@ -168,8 +177,11 @@
     </nav>
   </header>
 
+  <!-- Storefront content follows the order of the landing-page design. -->
   <main class="page-width">
+    <!-- The carousel slide content and image are updated by main.js. -->
     <section class="hero" id="offers" role="region" aria-roledescription="carousel" aria-label="Featured offers">
+      <a class="hero__destination" href="category-products.html?category=watches" aria-label="View smart wearable offer"></a>
       <div class="hero__copy" aria-live="polite" aria-atomic="true">
         <p class="hero__eyebrow">Best Deal Online on smart watches</p>
         <h1>SMART WEARABLE.</h1>
@@ -198,86 +210,82 @@
         </svg></button>
     </section>
 
+    <!-- Product cards use catalog IDs for detail views and cart operations. -->
     <section class="content-section" id="phones">
       <div class="section-heading">
         <h2>Grab the best deal on <span>Smartphones</span></h2>
-        <a href="#phones">View All <svg class="icon" aria-hidden="true">
+        <a href="smartphones.html">View All <svg class="icon" aria-hidden="true">
             <use href="#icon-chevron-right" />
           </svg></a>
       </div>
       <div class="product-grid">
-        <article class="product-card" data-product-id="galaxy-s22-ultra" data-price="32999"
+        <article class="product-card" data-product-id="galaxy-s22-ultra" data-price="350"
           data-image="images/galaxy-s22-ultra.webp.png" data-search="galaxy s22 ultra smartphone samsung">
-          <span class="discount-badge">56%<br>OFF</span>
           <div class="image-slot product-card__image" data-src="images/galaxy-s22-ultra.webp.png"
             data-image-ready="true" role="img" aria-label="Galaxy S22 Ultra">
             <span class="image-slot__label">Product image<br><small>galaxy-s22-ultra.webp</small></span>
           </div>
           <div class="product-card__details">
             <h3>Galaxy S22 Ultra</h3>
-            <p class="price"><strong>$329.99</strong><del>$749.99</del></p>
-            <p class="saving">Save - $329.99</p>
+            <p class="price"><strong>$350</strong></p>
           </div>
+          <a class="product-details" href="product-detail.html?id=galaxy-s22-ultra" data-catalog-item="galaxy-s22-ultra">Product details</a>
           <button class="quick-add" type="button" data-product="Galaxy S22 Ultra"
             aria-label="Add Galaxy S22 Ultra to cart">Add to cart</button>
         </article>
-        <article class="product-card product-card--featured" data-product-id="galaxy-m13" data-price="10499"
+        <article class="product-card product-card--featured" data-product-id="galaxy-m13" data-price="130"
           data-image="images/galaxy-m13.webp.png" data-search="galaxy m13 smartphone samsung">
-          <span class="discount-badge">56%<br>OFF</span>
           <div class="image-slot product-card__image" data-src="images/galaxy-m13.webp.png" data-image-ready="true"
             role="img" aria-label="Galaxy M13">
             <span class="image-slot__label">Product image<br><small>galaxy-m13.webp</small></span>
           </div>
           <div class="product-card__details">
-            <h3>Galaxy M13 (4GB | 64 GB )</h3>
-            <p class="price"><strong>$104.99</strong><del>$149.99</del></p>
-            <p class="saving">Save - $45.00</p>
+            <h3>Galaxy M13 (4GB / 64GB listing; variant unverified)</h3>
+            <p class="price"><strong>$130</strong></p>
           </div>
+          <a class="product-details" href="product-detail.html?id=galaxy-m13" data-catalog-item="galaxy-m13">Product details</a>
           <button class="quick-add" type="button" data-product="Galaxy M13" aria-label="Add Galaxy M13 to cart">Add to
             cart</button>
         </article>
-        <article class="product-card" data-product-id="galaxy-m33" data-price="16999"
+        <article class="product-card" data-product-id="galaxy-m33" data-price="200"
           data-image="images/galaxy-m33.webp.png" data-search="galaxy m33 smartphone samsung">
-          <span class="discount-badge">56%<br>OFF</span>
           <div class="image-slot product-card__image" data-src="images/galaxy-m33.webp.png" data-image-ready="true"
             role="img" aria-label="Galaxy M33">
             <span class="image-slot__label">Product image<br><small>galaxy-m33.webp</small></span>
           </div>
           <div class="product-card__details">
-            <h3>Galaxy M33 (4GB | 64 GB )</h3>
-            <p class="price"><strong>$16999</strong><del>$24999</del></p>
-            <p class="saving">Save - $8000</p>
+            <h3>Galaxy M33 5G (verify listed configuration)</h3>
+            <p class="price"><strong>$200</strong></p>
           </div>
+          <a class="product-details" href="product-detail.html?id=galaxy-m33" data-catalog-item="galaxy-m33">Product details</a>
           <button class="quick-add" type="button" data-product="Galaxy M33" aria-label="Add Galaxy M33 to cart">Add to
             cart</button>
         </article>
-        <article class="product-card" data-product-id="galaxy-m53" data-price="31999"
+        <article class="product-card" data-product-id="galaxy-m53" data-price="300"
           data-image="images/galaxy-m53.webp.png" data-search="galaxy m53 smartphone samsung">
-          <span class="discount-badge">56%<br>OFF</span>
           <div class="image-slot product-card__image" data-src="images/galaxy-m53.webp.png" data-image-ready="true"
             role="img" aria-label="Galaxy M53">
             <span class="image-slot__label">Product image<br><small>galaxy-m53.webp</small></span>
           </div>
           <div class="product-card__details">
-            <h3>Galaxy M53 (4GB | 64 GB )</h3>
-            <p class="price"><strong>$31999</strong><del>$40999</del></p>
-            <p class="saving">Save - $9000</p>
+            <h3>Galaxy M53 5G (verify listed configuration)</h3>
+            <p class="price"><strong>$300</strong></p>
           </div>
+          <a class="product-details" href="product-detail.html?id=galaxy-m53" data-catalog-item="galaxy-m53">Product details</a>
           <button class="quick-add" type="button" data-product="Galaxy M53" aria-label="Add Galaxy M53 to cart">Add to
             cart</button>
         </article>
-        <article class="product-card" data-product-id="galaxy-s22-green" data-price="67999"
+        <article class="product-card" data-product-id="galaxy-s22-ultra-green" data-price="400"
           data-image="images/galaxy-s22-green.webp.png" data-search="galaxy s22 ultra smartphone samsung">
-          <span class="discount-badge">56%<br>OFF</span>
           <div class="image-slot product-card__image" data-src="images/galaxy-s22-green.webp.png"
             data-image-ready="true" role="img" aria-label="Green Galaxy S22 Ultra">
             <span class="image-slot__label">Product image<br><small>galaxy-s22-green.webp</small></span>
           </div>
           <div class="product-card__details">
-            <h3>Galaxy S22 Ultra</h3>
-            <p class="price"><strong>$67999</strong><del>$85999</del></p>
-            <p class="saving">Save - $18000</p>
+            <h3>Galaxy S22 Ultra — Green</h3>
+            <p class="price"><strong>$400</strong></p>
           </div>
+          <a class="product-details" href="product-detail.html?id=galaxy-s22-ultra-green" data-catalog-item="galaxy-s22-ultra-green">Product details</a>
           <button class="quick-add" type="button" data-product="Galaxy S22 Ultra Green"
             aria-label="Add Galaxy S22 Ultra to cart">Add to cart</button>
         </article>
@@ -285,45 +293,46 @@
       <p class="empty-search" hidden>No matching products found. Try another search.</p>
     </section>
 
+    <!-- Each category tile links to its category-specific product listing. -->
     <section class="content-section categories-section" id="categories">
       <div class="section-heading">
         <h2>Shop From <span>Top Categories</span></h2>
-        <a href="#categories">View All <svg class="icon" aria-hidden="true">
+        <a href="top-categories.html">View All <svg class="icon" aria-hidden="true">
             <use href="#icon-chevron-right" />
           </svg></a>
       </div>
       <div class="category-grid">
-        <a class="category-item category-item--selected" href="#phones">
+        <a class="category-item category-item--selected" href="category-products.html?category=mobile">
           <span class="image-slot category-item__image" data-src="images/mobile.png" data-image-ready="true" role="img"
             aria-label="Mobile category"><span class="image-slot__label">Mobile</span></span>
           <span>Mobile</span>
         </a>
-        <a class="category-item" href="#essentials">
+        <a class="category-item" href="category-products.html?category=cosmetics">
           <span class="image-slot category-item__image" data-src="images/cosmetics.png" data-image-ready="true"
             role="img" aria-label="Cosmetics category"><span class="image-slot__label">Cosmetics</span></span>
           <span>Cosmetics</span>
         </a>
-        <a class="category-item" href="#phones">
+        <a class="category-item" href="category-products.html?category=electronics">
           <span class="image-slot category-item__image" data-src="images/electronics.png" data-image-ready="true"
             role="img" aria-label="Electronics category"><span class="image-slot__label">Electronics</span></span>
           <span>Electronics</span>
         </a>
-        <a class="category-item" href="#brands">
+        <a class="category-item" href="category-products.html?category=furniture">
           <span class="image-slot category-item__image" data-src="images/furniture.png" data-image-ready="true"
             role="img" aria-label="Furniture category"><span class="image-slot__label">Furniture</span></span>
           <span>Furniture</span>
         </a>
-        <a class="category-item" href="#offers">
+        <a class="category-item" href="category-products.html?category=watches">
           <span class="image-slot category-item__image" data-src="images/watches.png" data-image-ready="true" role="img"
             aria-label="Watches category"><span class="image-slot__label">Watches</span></span>
           <span>Watches</span>
         </a>
-        <a class="category-item" href="#essentials">
+        <a class="category-item" href="category-products.html?category=decor">
           <span class="image-slot category-item__image" data-src="images/decor.png" data-image-ready="true" role="img"
             aria-label="Decor category"><span class="image-slot__label">Decor</span></span>
           <span>Decor</span>
         </a>
-        <a class="category-item" href="#essentials">
+        <a class="category-item" href="category-products.html?category=accessories">
           <span class="image-slot category-item__image" data-src="images/accessories.png" data-image-ready="true"
             role="img" aria-label="Accessories category"><span class="image-slot__label">Accessories</span></span>
           <span>Accessories</span>
@@ -331,94 +340,109 @@
       </div>
     </section>
 
+    <!-- Brand offers link to the corresponding products in the catalog. -->
     <section class="content-section brands-section" id="brands">
       <div class="section-heading">
         <h2>Top <span>Electronics Brands</span></h2>
-        <a href="#brands">View All <svg class="icon" aria-hidden="true">
+        <a href="electronics-brands.html">View All <svg class="icon" aria-hidden="true">
             <use href="#icon-chevron-right" />
           </svg></a>
       </div>
       <div class="brand-grid">
-        <a class="brand-card brand-card--dark" href="#phones" aria-label="iPhone offers up to 80 percent off">
+        <a class="brand-card brand-card--dark" href="product-detail.html?id=iphone-15" data-catalog-item="iphone-15" aria-label="View iPhone 15">
           <span class="brand-card__name iphone">IPHONE</span><span class="brand-card__logo brand-card__logo--apple"
             aria-hidden="true"><svg class="icon">
               <use href="#icon-apple" />
             </svg></span>
-          <span class="brand-card__offer">UP to 80% OFF</span>
+          <!-- <span class="brand-card__offer">Explore iPhone products</span> -->
           <span class="image-slot brand-card__image" data-src="images/phone%20image%201.png" data-image-ready="true"
             role="img" aria-label="iPhone promotion"><span class="image-slot__label">Phone image</span></span>
         </a>
-        <a class="brand-card brand-card--yellow" href="#phones" aria-label="Realme offers up to 80 percent off">
+        <a class="brand-card brand-card--yellow" href="product-detail.html?id=realme-gt-6" data-catalog-item="realme-gt-6" aria-label="View realme GT 6">
           <span class="brand-card__name">REALME</span><span class="brand-card__logo">realme</span>
-          <span class="brand-card__offer">UP to 80% OFF</span>
+          <!-- <span class="brand-card__offer">Explore realme products</span> -->
           <span class="image-slot brand-card__image one" data-src="images/phone%20image%202.png" data-image-ready="true"
             role="img" aria-label="Realme promotion"><span class="image-slot__label">Phone image</span></span>
         </a>
-        <a class="brand-card brand-card--peach" href="#phones" aria-label="Xiaomi offers up to 80 percent off">
+        <a class="brand-card brand-card--peach" href="product-detail.html?id=xiaomi-14" data-catalog-item="xiaomi-14" aria-label="View Xiaomi 14">
           <span class="brand-card__name">XIAOMI</span><span class="brand-card__logo brand-card__logo--xiaomi"
             aria-hidden="true"><svg class="icon">
               <use href="#icon-xiaomi" />
             </svg></span>
-          <span class="brand-card__offer">UP to 80% OFF</span>
+          <!-- <span class="brand-card__offer">Explore Xiaomi products</span> -->
           <span class="image-slot brand-card__image one" data-src="images/phone%20image%203.png" data-image-ready="true"
             role="img" aria-label="Xiaomi promotion"><span class="image-slot__label">Phone image</span></span>
         </a>
       </div>
-      <div class="carousel-dots" aria-hidden="true"><span
-          class="is-active"></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      <!-- <div class="carousel-dots" aria-hidden="true"><span
+          class="is-active"></span><span></span><span></span><span></span><span></span><span></span><span></span></div> -->
     </section>
 
     <section class="content-section essentials-section" id="essentials">
       <div class="section-heading">
         <h2>Daily <span>Essentials</span></h2>
-        <a href="#essentials">View All <svg class="icon" aria-hidden="true">
+        <a href="daily-essentials.html">View All <svg class="icon" aria-hidden="true">
             <use href="#icon-chevron-right" />
           </svg></a>
       </div>
       <div class="essentials-grid">
-        <a class="essential-item essential-item--selected" href="#essentials">
+        <a class="essential-item essential-item--selected" href="product-detail.html?id=daily-staples" data-catalog-item="daily-staples">
           <span class="image-slot essential-item__image" data-src="images/daily%20essentials.png"
             data-image-ready="true" role="img" aria-label="Daily essentials"><span class="image-slot__label">Daily
               essentials</span></span>
-          <span>Daily Essentials</span><strong>UP to 50% OFF</strong>
+          <span>Daily Essentials</span><strong>Packaged pantry staples</strong>
         </a>
-        <a class="essential-item" href="#essentials">
+        <a class="essential-item" href="product-detail.html?id=daily-vegetables" data-catalog-item="daily-vegetables">
           <span class="image-slot essential-item__image" data-src="images/vegetables.png" data-image-ready="true"
             role="img" aria-label="Vegetables"><span class="image-slot__label">Vegetables</span></span>
-          <span>Vegetables</span><strong>UP to 50% OFF</strong>
+          <span>Vegetables</span><strong>Fresh produce</strong>
         </a>
-        <a class="essential-item" href="#essentials">
+        <a class="essential-item" href="product-detail.html?id=daily-fruits" data-catalog-item="daily-fruits">
           <span class="image-slot essential-item__image" data-src="images/fruits.png" data-image-ready="true" role="img"
             aria-label="Fruits"><span class="image-slot__label">Fruits</span></span>
-          <span>Fruits</span><strong>UP to 50% OFF</strong>
+          <span>Fruits</span><strong>Fresh produce</strong>
         </a>
-        <a class="essential-item" href="#essentials">
+        <a class="essential-item" href="product-detail.html?id=daily-strawberries" data-catalog-item="daily-strawberries">
           <span class="image-slot essential-item__image" data-src="images/strawberry.png" data-image-ready="true"
             role="img" aria-label="Strawberries"><span class="image-slot__label">Strawberry</span></span>
-          <span>Strawberry</span><strong>UP to 50% OFF</strong>
+          <span>Strawberry</span><strong>Seasonal produce</strong>
         </a>
-        <a class="essential-item" href="#essentials">
+        <a class="essential-item" href="product-detail.html?id=daily-mango" data-catalog-item="daily-mango">
           <span class="image-slot essential-item__image" data-src="images/mango.png" data-image-ready="true" role="img"
             aria-label="Mango"><span class="image-slot__label">Mango</span></span>
-          <span>Mango</span><strong>UP to 50% OFF</strong>
+          <span>Mango</span><strong>Seasonal produce</strong>
         </a>
-        <a class="essential-item" href="#essentials">
+        <a class="essential-item" href="product-detail.html?id=daily-cherries" data-catalog-item="daily-cherries">
           <span class="image-slot essential-item__image" data-src="images/cherry.png" data-image-ready="true" role="img"
             aria-label="Cherries"><span class="image-slot__label">Cherry</span></span>
-          <span>Cherry</span><strong>UP to 50% OFF</strong>
+          <span>Cherry</span><strong>Seasonal produce</strong>
         </a>
       </div>
     </section>
   </main>
 
+  <dialog class="product-dialog" aria-labelledby="product-dialog-title">
+    <button class="product-dialog__close" type="button" aria-label="Close product details">×</button>
+    <div class="product-dialog__image"></div>
+    <div class="product-dialog__content">
+      <p class="product-dialog__brand"></p>
+      <h2 class="product-dialog__title" id="product-dialog-title"></h2>
+      <p class="product-dialog__description"></p>
+      <ul class="product-dialog__specs"></ul>
+      <p class="product-dialog__price"></p>
+      <a class="product-dialog__source" target="_blank" rel="noopener noreferrer">Manufacturer or reference source</a>
+      <button class="catalog-button catalog-button--primary" type="button" data-dialog-add>Add to cart</button>
+    </div>
+  </dialog>
+
   <footer class="site-footer">
     <div class="page-width footer-content">
-      <div class="footer-contact">
-        <a class="footer-wordmark" href="#">MegaMart</a>
+      <div class="footer-contact" id="contact">
+        <a class="footer-wordmark" href="#">KagalariMart</a>
         <h2>Contact Us</h2>
         <p><svg class="icon footer-contact__icon" aria-hidden="true">
             <use href="#icon-whatsapp" />
-          </svg> WhatsApp<br><a href="tel:+234805370924">+234 805 370 924</a></p>
+          </svg> WhatsApp<br><a href="https://wa.me/message/PLWWLLLP47IZL1">+234 805 370 924</a></p>
         <p><svg class="icon footer-contact__icon" aria-hidden="true">
             <use href="#icon-phone" />
           </svg> Call Us<br><a href="tel:+234805370924">+234 805 370 924</a></p>
@@ -448,18 +472,19 @@
       <div class="footer-links">
         <h2>Customer Services</h2>
         <ul>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#terms">Terms &amp; Conditions</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#privacy">Privacy Policy</a></li>
-          <li><a href="#ewaste">E-waste Policy</a></li>
-          <li><a href="#returns">Cancellation &amp; Return Policy</a></li>
+          <li><a href="customer-service.html#about">About Us</a></li>
+          <li><a href="customer-service.html#terms">Terms &amp; Conditions</a></li>
+          <li><a href="customer-service.html#faq">FAQ</a></li>
+          <li><a href="customer-service.html#privacy">Privacy Policy</a></li>
+          <li><a href="customer-service.html#ewaste">E-waste Policy</a></li>
+          <li><a href="customer-service.html#returns">Cancellation &amp; Return Policy</a></li>
         </ul>
       </div>
     </div>
-    <div class="page-width footer-bottom">© 2026 All rights reserved. Reliance Retail Ltd.</div>
+    <div class="page-width footer-bottom">© 2026 KagalariMart. All rights reserved.</div>
   </footer>
   <div class="toast" role="status" aria-live="polite"></div>
+  <script src="assets/js/page-controls.js"></script>
 </body>
 
 </html>
